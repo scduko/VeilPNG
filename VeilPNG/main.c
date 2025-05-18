@@ -441,8 +441,8 @@ DWORD WINAPI CreateVeilThread(LPVOID param) {
     }
 
     if (!IsPasswordStrong(password)) {
-        PostMessage(hwnd, WM_UPDATE_STATUS_TEXT, 0, (LPARAM)_tcsdup(_T("Password is too weak. It must be at least 8 characters long and include uppercase, lowercase, digits, and special characters.")));
-        goto cleanup;
+        PostMessage(hwnd, WM_UPDATE_STATUS_TEXT, 0, (LPARAM)_tcsdup(_T("Password is weak/does not satisfy standard VeilPNG requirements. Proceeding anyway.")));
+        // goto cleanup;
     }
 
     // Ask user for output file
